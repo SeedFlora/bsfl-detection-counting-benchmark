@@ -11,6 +11,11 @@ runs/
 *.pt
 *.zip
 
+# Large binary/image files (keep PNGs in ieee_figures_split, exclude rest)
+*.pdf
+reports/yolo_runs/
+reports/yolo_multiseed/yolo_multiseed_strengthening/plots/qualitative_success_failure_montage.png
+
 # OS
 .DS_Store
 Thumbs.db
