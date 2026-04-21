@@ -1,0 +1,28 @@
+{
+  "method": "yolo_v8n_smoke",
+  "weights_path": "/workspace/reports/yolo_runs/larvae_counting_gpu2/weights/best.pt",
+  "best_confidence_for_counting": 0.4,
+  "val": {
+    "mae": 4.269230769230769,
+    "rmse": 12.108483993274493,
+    "r2": 0.7953841064080271,
+    "exact_match_rate": 0.23076923076923078,
+    "mean_true": 13.865384615384615,
+    "mean_pred": 17.826923076923077
+  },
+  "test": {
+    "mae": 8.577777777777778,
+    "rmse": 18.261069702146877,
+    "r2": 0.772426720372707,
+    "exact_match_rate": 0.37777777777777777,
+    "mean_true": 25.2,
+    "mean_pred": 33.68888888888889
+  },
+  "test_detection_metrics": {
+    "metrics/precision(B)": 0.780072742906413,
+    "metrics/recall(B)": 0.8757921850311992,
+    "metrics/mAP50(B)": 0.8639234199279375,
+    "metrics/mAP50-95(B)": 0.7022822414724084,
+    "fitness": 0.7022822414724084
+  }
+}

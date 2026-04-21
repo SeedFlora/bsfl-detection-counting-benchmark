@@ -1,0 +1,49 @@
+{
+  "project_root": "D:\\13359376",
+  "single_larvae": {
+    "rows": 1613,
+    "single_images_present": 1608,
+    "valid_sex_crops": 1539,
+    "sex_labeled": 1462,
+    "regression_ready": 1613,
+    "weight_size_distribution": {
+      "small": 550,
+      "large": 538,
+      "medium": 525
+    },
+    "length_size_distribution": {
+      "small": 542,
+      "large": 536,
+      "medium": 535
+    },
+    "split_distribution": {
+      "train": 1253,
+      "val": 222,
+      "test": 138
+    }
+  },
+  "detection_counting": {
+    "rows": 321,
+    "total_objects": 6612,
+    "split_distribution": {
+      "train": 224,
+      "val": 52,
+      "test": 45
+    },
+    "split_object_counts": {
+      "test": 1134,
+      "train": 4757,
+      "val": 721
+    }
+  },
+  "size_thresholds": {
+    "weight": {
+      "lower": 0.196,
+      "upper": 0.23066666666666652
+    },
+    "length": {
+      "lower": 19.15,
+      "upper": 20.66
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "benchmark_name": "yolo11_gpu_benchmark",
+  "models": [
+    "yolo11n.pt",
+    "yolo11s.pt"
+  ],
+  "epochs": 20,
+  "imgsz": 640,
+  "train_device": "0",
+  "eval_device": "cuda",
+  "batch": 16,
+  "workers": 2,
+  "ranking_by_counting": [
+    {
+      "variant": "yolo11n",
+      "model_name": "yolo11n.pt",
+      "run_name": "yolo11_gpu_benchmark_yolo11n",
+      "run_dir": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11n",
+      "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11n/weights/best.pt",
+      "best_confidence_for_counting": 0.4,
+      "test_detection_precision": 0.7691024912571142,
+      "test_detection_recall": 0.8562610229276896,
+      "test_detection_mAP50": 0.8511107357531404,
+      "test_detection_mAP50_95": 0.6847733616475098,
+      "test_count_mae": 8.6,
+      "test_count_rmse": 19.810771480855223,
+      "test_count_r2": 0.7321623556245753,
+      "test_count_exact_match_rate": 0.28888888888888886,
+      "val_count_mae": 3.019230769230769,
+      "val_count_rmse": 8.563114099258696,
+      "val_count_r2": 0.8976652148129338,
+      "epoch_count": 20,
+      "best_val_epoch": 20,
+      "best_val_precision": 0.77717,
+      "best_val_recall": 0.87517,
+      "best_val_mAP50": 0.8716,
+      "best_val_mAP50_95": 0.70699,
+      "last_epoch": 20,
+      "last_val_mAP50": 0.8716,
+      "last_val_mAP50_95": 0.70699
+    },
+    {
+      "variant": "yolo11s",
+      "model_name": "yolo11s.pt",
+      "run_name": "yolo11_gpu_benchmark_yolo11s",
+      "run_dir": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11s",
+      "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11s/weights/best.pt",
+      "best_confidence_for_counting": 0.4,
+      "test_detection_precision": 0.7830195566530562,
+      "test_detection_recall": 0.8615520282186949,
+      "test_detection_mAP50": 0.8496172787881316,
+      "test_detection_mAP50_95": 0.712237042189531,
+      "test_count_mae": 10.8,
+      "test_count_rmse": 26.7482086627622,
+      "test_count_r2": 0.5117320198000582,
+      "test_count_exact_match_rate": 0.3333333333333333,
+      "val_count_mae": 4.384615384615385,
+      "val_count_rmse": 13.340222579160306,
+      "val_count_r2": 0.7516375289480435,
+      "epoch_count": 20,
+      "best_val_epoch": 17,
+      "best_val_precision": 0.80337,
+      "best_val_recall": 0.85,
+      "best_val_mAP50": 0.884,
+      "best_val_mAP50_95": 0.73058,
+      "last_epoch": 20,
+      "last_val_mAP50": 0.8806,
+      "last_val_mAP50_95": 0.74349
+    }
+  ],
+  "ranking_by_detection": [
+    {
+      "variant": "yolo11n",
+      "model_name": "yolo11n.pt",
+      "run_name": "yolo11_gpu_benchmark_yolo11n",
+      "run_dir": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11n",
+      "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11n/weights/best.pt",
+      "best_confidence_for_counting": 0.4,
+      "test_detection_precision": 0.7691024912571142,
+      "test_detection_recall": 0.8562610229276896,
+      "test_detection_mAP50": 0.8511107357531404,
+      "test_detection_mAP50_95": 0.6847733616475098,
+      "test_count_mae": 8.6,
+      "test_count_rmse": 19.810771480855223,
+      "test_count_r2": 0.7321623556245753,
+      "test_count_exact_match_rate": 0.28888888888888886,
+      "val_count_mae": 3.019230769230769,
+      "val_count_rmse": 8.563114099258696,
+      "val_count_r2": 0.8976652148129338,
+      "epoch_count": 20,
+      "best_val_epoch": 20,
+      "best_val_precision": 0.77717,
+      "best_val_recall": 0.87517,
+      "best_val_mAP50": 0.8716,
+      "best_val_mAP50_95": 0.70699,
+      "last_epoch": 20,
+      "last_val_mAP50": 0.8716,
+      "last_val_mAP50_95": 0.70699
+    },
+    {
+      "variant": "yolo11s",
+      "model_name": "yolo11s.pt",
+      "run_name": "yolo11_gpu_benchmark_yolo11s",
+      "run_dir": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11s",
+      "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11s/weights/best.pt",
+      "best_confidence_for_counting": 0.4,
+      "test_detection_precision": 0.7830195566530562,
+      "test_detection_recall": 0.8615520282186949,
+      "test_detection_mAP50": 0.8496172787881316,
+      "test_detection_mAP50_95": 0.712237042189531,
+      "test_count_mae": 10.8,
+      "test_count_rmse": 26.7482086627622,
+      "test_count_r2": 0.5117320198000582,
+      "test_count_exact_match_rate": 0.3333333333333333,
+      "val_count_mae": 4.384615384615385,
+      "val_count_rmse": 13.340222579160306,
+      "val_count_r2": 0.7516375289480435,
+      "epoch_count": 20,
+      "best_val_epoch": 17,
+      "best_val_precision": 0.80337,
+      "best_val_recall": 0.85,
+      "best_val_mAP50": 0.884,
+      "best_val_mAP50_95": 0.73058,
+      "last_epoch": 20,
+      "last_val_mAP50": 0.8806,
+      "last_val_mAP50_95": 0.74349
+    }
+  ],
+  "variants": [
+    {
+      "variant": "yolo11n",
+      "model_name": "yolo11n.pt",
+      "run_name": "yolo11_gpu_benchmark_yolo11n",
+      "run_dir": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11n",
+      "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11n/weights/best.pt",
+      "history_summary": {
+        "epoch_count": 20,
+        "best_val_epoch": 20,
+        "best_val_precision": 0.77717,
+        "best_val_recall": 0.87517,
+        "best_val_mAP50": 0.8716,
+        "best_val_mAP50_95": 0.70699,
+        "last_epoch": 20,
+        "last_val_mAP50": 0.8716,
+        "last_val_mAP50_95": 0.70699
+      },
+      "summary": {
+        "method": "yolo11n",
+        "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11n/weights/best.pt",
+        "best_confidence_for_counting": 0.4,
+        "val": {
+          "mae": 3.019230769230769,
+          "rmse": 8.563114099258696,
+          "r2": 0.8976652148129338,
+          "exact_match_rate": 0.28846153846153844,
+          "mean_true": 13.865384615384615,
+          "mean_pred": 16.03846153846154
+        },
+        "test": {
+          "mae": 8.6,
+          "rmse": 19.810771480855223,
+          "r2": 0.7321623556245753,
+          "exact_match_rate": 0.28888888888888886,
+          "mean_true": 25.2,
+          "mean_pred": 33.8
+        },
+        "test_detection_metrics": {
+          "metrics/precision(B)": 0.7691024912571142,
+          "metrics/recall(B)": 0.8562610229276896,
+          "metrics/mAP50(B)": 0.8511107357531404,
+          "metrics/mAP50-95(B)": 0.6847733616475098,
+          "fitness": 0.6847733616475098
+        }
+      }
+    },
+    {
+      "variant": "yolo11s",
+      "model_name": "yolo11s.pt",
+      "run_name": "yolo11_gpu_benchmark_yolo11s",
+      "run_dir": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11s",
+      "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11s/weights/best.pt",
+      "history_summary": {
+        "epoch_count": 20,
+        "best_val_epoch": 17,
+        "best_val_precision": 0.80337,
+        "best_val_recall": 0.85,
+        "best_val_mAP50": 0.884,
+        "best_val_mAP50_95": 0.73058,
+        "last_epoch": 20,
+        "last_val_mAP50": 0.8806,
+        "last_val_mAP50_95": 0.74349
+      },
+      "summary": {
+        "method": "yolo11s",
+        "weights_path": "/workspace/reports/yolo_runs/yolo11_gpu_benchmark_yolo11s/weights/best.pt",
+        "best_confidence_for_counting": 0.4,
+        "val": {
+          "mae": 4.384615384615385,
+          "rmse": 13.340222579160306,
+          "r2": 0.7516375289480435,
+          "exact_match_rate": 0.1346153846153846,
+          "mean_true": 13.865384615384615,
+          "mean_pred": 17.634615384615383
+        },
+        "test": {
+          "mae": 10.8,
+          "rmse": 26.7482086627622,
+          "r2": 0.5117320198000582,
+          "exact_match_rate": 0.3333333333333333,
+          "mean_true": 25.2,
+          "mean_pred": 35.733333333333334
+        },
+        "test_detection_metrics": {
+          "metrics/precision(B)": 0.7830195566530562,
+          "metrics/recall(B)": 0.8615520282186949,
+          "metrics/mAP50(B)": 0.8496172787881316,
+          "metrics/mAP50-95(B)": 0.712237042189531,
+          "fitness": 0.712237042189531
+        }
+      }
+    }
+  ],
+  "plots": {
+    "detection_metrics_comparison": "/workspace/reports/yolo_benchmark/yolo11_gpu_benchmark/plots/detection_metrics_comparison.png",
+    "counting_metrics_comparison": "/workspace/reports/yolo_benchmark/yolo11_gpu_benchmark/plots/counting_metrics_comparison.png",
+    "training_curve_map50": "/workspace/reports/yolo_benchmark/yolo11_gpu_benchmark/plots/training_curve_map50.png",
+    "training_curve_map50_95": "/workspace/reports/yolo_benchmark/yolo11_gpu_benchmark/plots/training_curve_map50_95.png",
+    "training_curve_val_box_loss": "/workspace/reports/yolo_benchmark/yolo11_gpu_benchmark/plots/training_curve_val_box_loss.png"
+  }
+}

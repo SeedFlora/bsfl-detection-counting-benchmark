@@ -1,0 +1,101 @@
+{
+  "feature_count": 165,
+  "target": "sex",
+  "labels": [
+    "F",
+    "M"
+  ],
+  "val": {
+    "accuracy": 0.6933962264150944,
+    "balanced_accuracy": 0.5010557432432432,
+    "macro_f1": 0.423888958568502,
+    "confusion_matrix": [
+      [
+        146,
+        2
+      ],
+      [
+        63,
+        1
+      ]
+    ],
+    "labels": [
+      "F",
+      "M"
+    ],
+    "report": {
+      "F": {
+        "precision": 0.6985645933014354,
+        "recall": 0.9864864864864865,
+        "f1-score": 0.8179271708683473,
+        "support": 148.0
+      },
+      "M": {
+        "precision": 0.3333333333333333,
+        "recall": 0.015625,
+        "f1-score": 0.029850746268656716,
+        "support": 64.0
+      },
+      "accuracy": 0.6933962264150944,
+      "macro avg": {
+        "precision": 0.5159489633173844,
+        "recall": 0.5010557432432432,
+        "f1-score": 0.423888958568502,
+        "support": 212.0
+      },
+      "weighted avg": {
+        "precision": 0.5883060997261593,
+        "recall": 0.6933962264150944,
+        "f1-score": 0.580017306838252,
+        "support": 212.0
+      }
+    }
+  },
+  "test": {
+    "accuracy": 0.7037037037037037,
+    "balanced_accuracy": 0.4947916666666667,
+    "macro_f1": 0.41304347826086957,
+    "confusion_matrix": [
+      [
+        95,
+        1
+      ],
+      [
+        39,
+        0
+      ]
+    ],
+    "labels": [
+      "F",
+      "M"
+    ],
+    "report": {
+      "F": {
+        "precision": 0.7089552238805971,
+        "recall": 0.9895833333333334,
+        "f1-score": 0.8260869565217391,
+        "support": 96.0
+      },
+      "M": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 39.0
+      },
+      "accuracy": 0.7037037037037037,
+      "macro avg": {
+        "precision": 0.35447761194029853,
+        "recall": 0.4947916666666667,
+        "f1-score": 0.41304347826086957,
+        "support": 135.0
+      },
+      "weighted avg": {
+        "precision": 0.5041459369817579,
+        "recall": 0.7037037037037037,
+        "f1-score": 0.58743961352657,
+        "support": 135.0
+      }
+    }
+  },
+  "model_path": "D:\\13359376\\models\\sex_classification.joblib"
+}

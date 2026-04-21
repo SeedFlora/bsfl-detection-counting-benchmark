@@ -1,0 +1,14 @@
+method,category,model_name,test_mae,test_rmse,test_r2,test_detection_precision,test_detection_recall,test_detection_mAP50,test_detection_mAP50_95,epochs,report_source
+extra_trees_count_regression,classical_count_regression,extra_trees_count_regression,7.033,16.1030783672326,0.8230352964464908,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+random_forest_count_regression,classical_count_regression,random_forest_count_regression,7.143888888888889,16.316980768171817,0.8183027127641828,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+hist_gradient_boosting_count_regression,classical_count_regression,hist_gradient_boosting_count_regression,7.353615113516056,14.366419782215774,0.8591470509022276,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+yolov8n_gpu_20ep,deep_learning_detector,yolov8n,8.577777777777778,18.261069702146877,0.772426720372707,0.780072742906413,0.8757921850311992,0.8639234199279375,0.7022822414724084,20.0,D:\13359376\reports\counting_from_yolo\larvae_counting_gpu2\summary.json
+yolo11n_gpu_20ep,deep_learning_detector,yolo11n.pt,8.6,19.810771480855223,0.7321623556245753,0.7691024912571142,0.8562610229276896,0.8511107357531404,0.6847733616475098,20.0,D:\13359376\reports\yolo_benchmark\yolo11_gpu_benchmark\comparison.csv
+knn_count_regression,classical_count_regression,knn_count_regression,9.084460386281904,16.329696147504148,0.8180194189171004,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+yolo11s_gpu_20ep,deep_learning_detector,yolo11s.pt,10.8,26.7482086627622,0.5117320198000582,0.7830195566530562,0.8615520282186949,0.8496172787881316,0.712237042189531,20.0,D:\13359376\reports\yolo_benchmark\yolo11_gpu_benchmark\comparison.csv
+watershed_counting,classical_cv,watershed_counting,14.8,32.77465145165968,0.2669307483257304,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+yolo_v8n_smoke,legacy_smoke,yolo_v8n_smoke,20.8,45.13584434176949,-0.3903110744443367,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+otsu_connected_components,classical_cv,otsu_connected_components,24.08888888888889,42.21900572543655,-0.216423614481219,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+distance_peak_counting,classical_cv,distance_peak_counting,25.488888888888887,46.37647871257344,-0.4677915412986508,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+adaptive_connected_components,classical_cv,adaptive_connected_components,76.2,119.4447338497786,-8.736499684557897,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv
+blob_detector_counting,classical_cv,blob_detector_counting,96.17777777777778,145.38760454576433,-13.425258419877704,,,,,,D:\13359376\reports\detection_counting_benchmark\ranking.csv

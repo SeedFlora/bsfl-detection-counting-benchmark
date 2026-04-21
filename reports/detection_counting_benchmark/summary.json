@@ -1,0 +1,273 @@
+{
+  "methods": {
+    "yolo_v8n_smoke": {
+      "method": "yolo_v8n_smoke",
+      "weights_path": "D:\\13359376\\reports\\yolo_runs\\larvae_counting_smoke\\weights\\best.pt",
+      "best_confidence_for_counting": 0.05,
+      "val": {
+        "mae": 10.461538461538462,
+        "rmse": 29.325100826110358,
+        "r2": -0.2001591723040188,
+        "exact_match_rate": 0.07692307692307693,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 3.7115384615384617
+      },
+      "test": {
+        "mae": 20.8,
+        "rmse": 45.135844341769484,
+        "r2": -0.39031107444433677,
+        "exact_match_rate": 0.06666666666666667,
+        "mean_true": 25.2,
+        "mean_pred": 4.488888888888889
+      },
+      "test_detection_metrics": {
+        "metrics/precision(B)": 0.8544699390239507,
+        "metrics/recall(B)": 0.13979719778607827,
+        "metrics/mAP50(B)": 0.26851523682570766,
+        "metrics/mAP50-95(B)": 0.18312064791094762,
+        "fitness": 0.18312064791094762
+      }
+    },
+    "otsu_connected_components": {
+      "method": "otsu_connected_components",
+      "val": {
+        "mae": 22.846153846153847,
+        "rmse": 40.095558933052004,
+        "r2": -1.2436358174844888,
+        "exact_match_rate": 0.019230769230769232,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 22.75
+      },
+      "test": {
+        "mae": 24.08888888888889,
+        "rmse": 42.21900572543655,
+        "r2": -0.21642361448121905,
+        "exact_match_rate": 0.1111111111111111,
+        "mean_true": 25.2,
+        "mean_pred": 24.08888888888889
+      }
+    },
+    "adaptive_connected_components": {
+      "method": "adaptive_connected_components",
+      "val": {
+        "mae": 110.38461538461539,
+        "rmse": 149.29101678368895,
+        "r2": -30.104782756127275,
+        "exact_match_rate": 0.0,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 124.25
+      },
+      "test": {
+        "mae": 76.2,
+        "rmse": 119.44473384977859,
+        "r2": -8.736499684557897,
+        "exact_match_rate": 0.06666666666666667,
+        "mean_true": 25.2,
+        "mean_pred": 100.77777777777777
+      }
+    },
+    "watershed_counting": {
+      "method": "watershed_counting",
+      "val": {
+        "mae": 20.807692307692307,
+        "rmse": 39.77097898255422,
+        "r2": -1.207457666308993,
+        "exact_match_rate": 0.057692307692307696,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 23.01923076923077
+      },
+      "test": {
+        "mae": 14.8,
+        "rmse": 32.77465145165968,
+        "r2": 0.2669307483257304,
+        "exact_match_rate": 0.1111111111111111,
+        "mean_true": 25.2,
+        "mean_pred": 26.533333333333335
+      }
+    },
+    "blob_detector_counting": {
+      "method": "blob_detector_counting",
+      "val": {
+        "mae": 132.40384615384616,
+        "rmse": 178.92762825747775,
+        "r2": -43.680150893692606,
+        "exact_match_rate": 0.019230769230769232,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 146.26923076923077
+      },
+      "test": {
+        "mae": 96.17777777777778,
+        "rmse": 145.38760454576433,
+        "r2": -13.425258419877705,
+        "exact_match_rate": 0.06666666666666667,
+        "mean_true": 25.2,
+        "mean_pred": 121.37777777777778
+      }
+    },
+    "distance_peak_counting": {
+      "method": "distance_peak_counting",
+      "val": {
+        "mae": 42.13461538461539,
+        "rmse": 79.47483878561818,
+        "r2": -7.8149353581867125,
+        "exact_match_rate": 0.019230769230769232,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 52.80769230769231
+      },
+      "test": {
+        "mae": 25.488888888888887,
+        "rmse": 46.376478712573444,
+        "r2": -0.46779154129865086,
+        "exact_match_rate": 0.08888888888888889,
+        "mean_true": 25.2,
+        "mean_pred": 46.28888888888889
+      }
+    },
+    "random_forest_count_regression": {
+      "method": "random_forest_count_regression",
+      "feature_count": 88,
+      "model_path": "D:\\13359376\\models\\count_random_forest.joblib",
+      "val": {
+        "mae": 6.191346153846155,
+        "rmse": 11.46464462782461,
+        "r2": 0.8165655020869431,
+        "exact_match_rate": 0.21153846153846154,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 17.25875
+      },
+      "test": {
+        "mae": 7.143888888888889,
+        "rmse": 16.316980768171817,
+        "r2": 0.8183027127641828,
+        "exact_match_rate": 0.24444444444444444,
+        "mean_true": 25.2,
+        "mean_pred": 27.72644444444445
+      }
+    },
+    "extra_trees_count_regression": {
+      "method": "extra_trees_count_regression",
+      "feature_count": 88,
+      "model_path": "D:\\13359376\\models\\count_extra_trees.joblib",
+      "val": {
+        "mae": 7.177692307692308,
+        "rmse": 12.957467750792226,
+        "r2": 0.7656849986985101,
+        "exact_match_rate": 0.1346153846153846,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 18.481025641025642
+      },
+      "test": {
+        "mae": 7.0329999999999995,
+        "rmse": 16.1030783672326,
+        "r2": 0.8230352964464908,
+        "exact_match_rate": 0.2222222222222222,
+        "mean_true": 25.2,
+        "mean_pred": 26.59403703703704
+      }
+    },
+    "knn_count_regression": {
+      "method": "knn_count_regression",
+      "feature_count": 88,
+      "model_path": "D:\\13359376\\models\\count_knn.joblib",
+      "val": {
+        "mae": 9.892399836030288,
+        "rmse": 18.020189661111864,
+        "r2": 0.5468118599973857,
+        "exact_match_rate": 0.21153846153846154,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 18.64850623691206
+      },
+      "test": {
+        "mae": 9.084460386281904,
+        "rmse": 16.329696147504148,
+        "r2": 0.8180194189171004,
+        "exact_match_rate": 0.13333333333333333,
+        "mean_true": 25.2,
+        "mean_pred": 28.490237172288747
+      }
+    },
+    "hist_gradient_boosting_count_regression": {
+      "method": "hist_gradient_boosting_count_regression",
+      "feature_count": 88,
+      "model_path": "D:\\13359376\\models\\count_hist_gradient_boosting.joblib",
+      "val": {
+        "mae": 11.357300647136611,
+        "rmse": 17.44344290622658,
+        "r2": 0.5753567385041549,
+        "exact_match_rate": 0.07692307692307693,
+        "mean_true": 13.865384615384615,
+        "mean_pred": 22.069092942735566
+      },
+      "test": {
+        "mae": 7.353615113516056,
+        "rmse": 14.366419782215774,
+        "r2": 0.8591470509022276,
+        "exact_match_rate": 0.06666666666666667,
+        "mean_true": 25.2,
+        "mean_pred": 26.33430818304586
+      }
+    }
+  },
+  "ranking": [
+    {
+      "method": "extra_trees_count_regression",
+      "test_mae": 7.0329999999999995,
+      "test_rmse": 16.1030783672326,
+      "test_r2": 0.8230352964464908
+    },
+    {
+      "method": "random_forest_count_regression",
+      "test_mae": 7.143888888888889,
+      "test_rmse": 16.316980768171817,
+      "test_r2": 0.8183027127641828
+    },
+    {
+      "method": "hist_gradient_boosting_count_regression",
+      "test_mae": 7.353615113516056,
+      "test_rmse": 14.366419782215774,
+      "test_r2": 0.8591470509022276
+    },
+    {
+      "method": "knn_count_regression",
+      "test_mae": 9.084460386281904,
+      "test_rmse": 16.329696147504148,
+      "test_r2": 0.8180194189171004
+    },
+    {
+      "method": "watershed_counting",
+      "test_mae": 14.8,
+      "test_rmse": 32.77465145165968,
+      "test_r2": 0.2669307483257304
+    },
+    {
+      "method": "yolo_v8n_smoke",
+      "test_mae": 20.8,
+      "test_rmse": 45.135844341769484,
+      "test_r2": -0.39031107444433677
+    },
+    {
+      "method": "otsu_connected_components",
+      "test_mae": 24.08888888888889,
+      "test_rmse": 42.21900572543655,
+      "test_r2": -0.21642361448121905
+    },
+    {
+      "method": "distance_peak_counting",
+      "test_mae": 25.488888888888887,
+      "test_rmse": 46.376478712573444,
+      "test_r2": -0.46779154129865086
+    },
+    {
+      "method": "adaptive_connected_components",
+      "test_mae": 76.2,
+      "test_rmse": 119.44473384977859,
+      "test_r2": -8.736499684557897
+    },
+    {
+      "method": "blob_detector_counting",
+      "test_mae": 96.17777777777778,
+      "test_rmse": 145.38760454576433,
+      "test_r2": -13.425258419877705
+    }
+  ]
+}

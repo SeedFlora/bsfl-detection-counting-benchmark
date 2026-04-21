@@ -1,0 +1,30 @@
+{
+  "best_counting_method": {
+    "method": "extra_trees_count_regression",
+    "category": "classical_count_regression",
+    "model_name": "extra_trees_count_regression",
+    "test_mae": 7.033,
+    "test_rmse": 16.1030783672326,
+    "test_r2": 0.8230352964464908,
+    "test_detection_precision": null,
+    "test_detection_recall": null,
+    "test_detection_mAP50": null,
+    "test_detection_mAP50_95": null,
+    "epochs": null,
+    "report_source": "D:\\13359376\\reports\\detection_counting_benchmark\\ranking.csv"
+  },
+  "best_detection_method": {
+    "method": "yolov8n_gpu_20ep",
+    "category": "deep_learning_detector",
+    "model_name": "yolov8n",
+    "test_mae": 8.577777777777778,
+    "test_rmse": 18.261069702146877,
+    "test_r2": 0.772426720372707,
+    "test_detection_precision": 0.780072742906413,
+    "test_detection_recall": 0.8757921850311992,
+    "test_detection_mAP50": 0.8639234199279375,
+    "test_detection_mAP50_95": 0.7022822414724084,
+    "epochs": 20.0,
+    "report_source": "D:\\13359376\\reports\\counting_from_yolo\\larvae_counting_gpu2\\summary.json"
+  }
+}
