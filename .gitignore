@@ -14,6 +14,7 @@ runs/
 # Large binary/image files (keep PNGs in ieee_figures_split, exclude rest)
 *.pdf
 reports/yolo_runs/
+reports/reviewer_experiments/
 reports/yolo_multiseed/yolo_multiseed_strengthening/plots/qualitative_success_failure_montage.png
 
 # OS

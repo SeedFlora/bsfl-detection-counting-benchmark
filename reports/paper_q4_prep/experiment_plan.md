@@ -1,4 +1,6 @@
-# Experiment Plan Before Submission
+# Experiment Plan and Completion Status Before Submission
+
+Status update: the reviewer-requested experiment batch has been run on 2026-06-01. Large YOLO training artifacts were stored outside the repository at `C:\BSF_reviewer_experiments`, while compact CSV/JSON summaries were copied back into `reports/reviewer_experiments/`.
 
 ## High Priority
 
@@ -30,9 +32,29 @@
 
 ## Medium Priority
 
-1. Jalankan evaluasi confidence sweep yang lebih rapat untuk counting dari detector.
+1. Jalankan evaluasi confidence sweep yang lebih rapat untuk counting dari detector. **Done** via confidence/IoU/NMS sweep.
 2. Tambahkan satu baseline detector lain jika memungkinkan.
-3. Uji augmentasi atau epoch lebih panjang pada `YOLO11n`.
+3. Uji augmentasi atau epoch lebih panjang pada `YOLO11n`. **Done** for YOLO11n and YOLOv8n across three seeds.
+
+## Reviewer-Requested Optional Experiments
+
+File eksperimen sudah disiapkan dan sudah dijalankan:
+
+| Reviewer issue | Script | Perlu training? |
+| --- | --- | --- |
+| Confidence/NMS/post-processing sweep | `scripts/benchmark_yolo_postprocessing_sweep.py` | Tidak |
+| Robustness brightness/contrast/blur/noise/occlusion | `scripts/benchmark_yolo_robustness.py` | Tidak |
+| 50-epoch check dan augmentation ablation | `scripts/benchmark_yolo_reviewer_training.py` | Ya |
+| One-command Docker launcher | `scripts/run_reviewer_experiments_gpu.ps1` | Opsional, hanya jika pakai `-RunTraining` |
+
+Output utama:
+
+- Post-processing: `reports/reviewer_experiments/postprocessing/reviewer_full_20260601_postprocessing/`
+- Robustness: `reports/reviewer_experiments/robustness/reviewer_full_20260601_robustness/`
+- Training ablation summary: `reports/reviewer_experiments/training/reviewer_full_20260601_training_c/`
+- Statistical summary: `reports/paper_q4_prep/reviewer_experiment_results_summary.md`
+- Statistical tests CSV: `reports/paper_q4_prep/statistical_tests.csv`
+- Panduan lengkap: `reports/paper_q4_prep/reviewer_experiment_runbook.md`
 
 ## Low Priority
 

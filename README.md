@@ -1,4 +1,4 @@
-# BSFMaggot
+# bsfl-detection-counting-benchmark
 
 Workspace untuk computer vision pada larva Black Soldier Fly (BSF/Maggot) — detection, counting, regression, dan size classification.
 
