@@ -1,111 +1,128 @@
 # bsfl-detection-counting-benchmark
 
-Workspace untuk computer vision pada larva Black Soldier Fly (BSF/Maggot) — detection, counting, regression, dan size classification.
+This repository accompanies the manuscript **"Automatic Detection and Counting of Black Soldier Fly Larvae Using Classical Computer Vision and Multi-Seed Lightweight YOLO Evaluation"**. The paper-facing components are the BSFL detection/counting dataset pipeline, classical counting baselines, lightweight YOLO benchmarks, reviewer-requested post-processing and robustness experiments, and statistical analyses.
+
+The repository also contains exploratory scripts for weight/length regression, size classification, and sex classification. Those exploratory tasks are retained for transparency but are **not** part of the manuscript's main detection/counting benchmark.
 
 ## Dataset
 
-Dataset **BSF_Larvae_v1** tersedia di Zenodo:
-**[https://zenodo.org/records/13359376](https://zenodo.org/records/13359376)**
+The image data are based on **BSF_Larvae_v1**, available from Zenodo:
 
-Download dan ekstrak ke `data/raw/` sebelum menjalankan pipeline.
+<https://zenodo.org/records/13359376>
 
----
+Download and extract the raw dataset into `data/raw/` before running the pipeline. Raw data, processed datasets, trained weights, and YOLO run folders are intentionally excluded from Git.
 
-Workspace ini menyiapkan tiga task utama dari dataset larva:
+## Paper Workflow
 
-- `detection/counting` dari `BSF_Larvae_v1`
-- `regression` untuk `weight` dan `length`
-- `size classification` (`small`, `medium`, `large`)
-
-Ada juga baseline eksplorasi untuk `sex classification`, tetapi itu bukan task utama karena sinyal visualnya terlihat lebih lemah.
-
-## Struktur Data
-
-- `data/raw/`
-  - hasil ekstraksi zip mentah
-- `data/processed/`
-  - manifest CSV, cache fitur, dan dataset deteksi yang sudah siap pakai
-- `reports/`
-  - metrik baseline dan ringkasan audit
-- `models/`
-  - model baseline yang tersimpan
-
-## Quick Start
-
-Install dependensi:
+Install the package and dependencies:
 
 ```bash
 pip install -r requirements.txt
 pip install -e .
 ```
 
-Siapkan semua manifest:
+Prepare the detection/counting dataset and manifest:
 
 ```bash
 python scripts/prepare_datasets.py
 ```
 
-Jalankan semua baseline klasik:
-
-```bash
-python scripts/run_all_baselines.py
-```
-
-Atau jalankan per task:
-
-```bash
-python scripts/train_regression_baseline.py
-python scripts/train_size_classification_baseline.py
-python scripts/train_sex_classification_baseline.py
-```
-
-Benchmark 5 metode untuk counting dan 5 metode untuk regression/size classification:
+Run classical detection/counting baselines:
 
 ```bash
 python scripts/benchmark_detection_counting_methods.py
-python scripts/benchmark_regression_size_methods.py
 ```
 
-## Detection / Counting
-
-Dataset deteksi dipersiapkan ke:
-
-- `data/processed/detection_counting/images/{train,val,test}`
-- `data/processed/detection_counting/labels/{train,val,test}`
-- `data/processed/detection_counting/dataset.yaml`
-
-Karena label asli `BSF_Larvae_v1` memiliki class id yang tidak konsisten untuk sebagian image dasar, pipeline ini meremap semua instance menjadi satu kelas `larva`. Itu membuat dataset lebih stabil untuk task `detection/counting`.
-
-Training YOLO sekarang sudah termasuk dalam dependensi utama. Setelah `pip install -r requirements.txt`, script ini bisa langsung dipakai:
+Run the initial YOLO variant benchmark:
 
 ```bash
-python scripts/train_detection_yolo.py --epochs 20
+python scripts/benchmark_yolo_variants.py --models yolov8n.pt yolo11n.pt yolo11s.pt --epochs 20 --train-device 0 --eval-device cuda --workers 2 --batch 16
 ```
 
-Untuk membandingkan beberapa varian YOLO sekaligus dan membuat grafik evaluasi:
+Run the multi-seed YOLO benchmark reported in the manuscript:
 
 ```bash
-python scripts/benchmark_yolo_variants.py --models yolo11n.pt yolo11s.pt --epochs 20 --train-device 0 --eval-device cuda --workers 2 --batch 16
+python scripts/benchmark_yolo_multiseed.py --models yolov8n.pt yolo11n.pt --seeds 0 1 2 --epochs 20 --train-device 0 --eval-device cuda --workers 2 --batch 16
 ```
 
-Output benchmark akan disimpan ke:
+Build the manuscript figures:
 
-- `reports/yolo_benchmark/<run_name>/comparison.csv`
-- `reports/yolo_benchmark/<run_name>/summary.json`
-- `reports/yolo_benchmark/<run_name>/plots/*.png`
+```bash
+python scripts/build_ieee_split_figures.py
+```
+
+## Reviewer Experiments
+
+The revision adds reviewer-requested experiments for post-processing, robustness, training length, augmentation sensitivity, and statistics.
+
+Post-processing sweep using existing multi-seed YOLO weights:
+
+```bash
+python scripts/benchmark_yolo_postprocessing_sweep.py --device cuda --include-agnostic-nms --benchmark-name reviewer_postprocessing
+```
+
+Robustness sensitivity under brightness, contrast, blur, noise, and synthetic occlusion:
+
+```bash
+python scripts/benchmark_yolo_robustness.py --device cuda --benchmark-name reviewer_robustness
+```
+
+Training ablations for 20 epochs, 50 epochs, minimal augmentation, and stronger augmentation:
+
+```bash
+python scripts/benchmark_yolo_reviewer_training.py --models yolov8n.pt yolo11n.pt --seeds 0 1 2 --cases default20 default50 minimal_aug20 robust_aug20 --train-device 0 --eval-device cuda --batch 16 --workers 2
+```
+
+Aggregate reviewer experiments and statistical tests:
+
+```bash
+python scripts/analyze_reviewer_experiments.py
+```
+
+One-command GPU Docker launcher:
+
+```powershell
+.\scripts\run_reviewer_experiments_gpu.ps1 -RunTraining -BenchmarkName reviewer_full
+```
+
+By default, the launcher writes large reviewer training artifacts to `C:\BSF_reviewer_experiments` and compact summaries to `reports/reviewer_experiments/`.
+
+## Main Paper Outputs
+
+Revision-ready manuscript materials are in:
+
+- `reports/paper_q4_prep/manuscript_draft.md`
+- `reports/paper_q4_prep/response_to_reviewers.md`
+- `reports/paper_q4_prep/tables_for_manuscript_multiseed.md`
+- `reports/paper_q4_prep/reviewer_experiment_results_summary.md`
+- `reports/paper_q4_prep/statistical_tests.csv`
+
+## Repository Structure
+
+- `scripts/`: dataset preparation, baseline benchmarks, YOLO training/evaluation, reviewer experiments, and figure generation.
+- `src/larvae_cv/`: reusable project code.
+- `reports/paper_q4_prep/`: manuscript tables, figure captions, response letter, and reviewer-experiment summaries.
+- `data/raw/`: raw dataset location, ignored by Git.
+- `data/processed/`: processed dataset location, ignored by Git.
+- `reports/yolo_runs/`: YOLO training artifacts, ignored by Git.
+- `reports/reviewer_experiments/`: reviewer experiment artifacts, ignored by Git.
 
 ## Docker
 
-Container baseline CPU:
+CPU container:
 
 ```bash
 docker build -t larvae-cv .
 docker run --rm -it -v ${PWD}:/workspace larvae-cv
 ```
 
-Container GPU untuk YOLO dan regresi:
+GPU container:
 
 ```bash
 docker build -f Dockerfile.gpu -t larvae-cv-gpu .
-docker run --rm --gpus all --shm-size=8g -v ${PWD}:/workspace -w /workspace larvae-cv-gpu python scripts/benchmark_yolo_variants.py --models yolo11n.pt yolo11s.pt --epochs 20 --train-device 0 --eval-device cuda --workers 2 --batch 16
+docker run --rm --gpus all --shm-size=8g -v ${PWD}:/workspace -w /workspace larvae-cv-gpu python scripts/benchmark_yolo_multiseed.py --models yolov8n.pt yolo11n.pt --seeds 0 1 2 --epochs 20 --train-device 0 --eval-device cuda --workers 2 --batch 16
 ```
+
+## License
+
+Code in this repository is released under the MIT License. See `LICENSE`.

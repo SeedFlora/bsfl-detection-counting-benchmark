@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.git/
+.venv/
+data/raw/
+data/processed/
+models/
+reports/reviewer_experiments/
+reports/yolo_runs/
+runs/
+*.pt
+*.zip

@@ -16,6 +16,8 @@ runs/
 reports/yolo_runs/
 reports/reviewer_experiments/
 reports/yolo_multiseed/yolo_multiseed_strengthening/plots/qualitative_success_failure_montage.png
+C:/BSF_reviewer_experiments/
+BSF_reviewer_experiments/
 
 # OS
 .DS_Store
