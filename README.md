@@ -12,6 +12,14 @@ The image data are based on **BSF_Larvae_v1**, available from Zenodo:
 
 Download and extract the raw dataset into `data/raw/` before running the pipeline. Raw data, processed datasets, trained weights, and YOLO run folders are intentionally excluded from Git.
 
+## Release and DOI
+
+The paper revision snapshot is archived as GitHub release:
+
+<https://github.com/SeedFlora/bsfl-detection-counting-benchmark/releases/tag/v1.0.0-paper-revision>
+
+This release corresponds to tag `v1.0.0-paper-revision` at commit `c4fd7bd`. After enabling this repository in the Zenodo GitHub integration, publishing this release will generate a permanent Zenodo DOI for citation.
+
 ## Paper Workflow
 
 Install the package and dependencies:
