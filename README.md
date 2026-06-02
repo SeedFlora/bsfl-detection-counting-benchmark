@@ -18,7 +18,7 @@ The paper revision snapshot is archived as GitHub release:
 
 <https://github.com/SeedFlora/bsfl-detection-counting-benchmark/releases/tag/v1.0.0-paper-revision>
 
-This release corresponds to tag `v1.0.0-paper-revision` at commit `c4fd7bd`. After enabling this repository in the Zenodo GitHub integration, publishing this release will generate a permanent Zenodo DOI for citation.
+This release corresponds to tag `v1.0.0-paper-revision`. After enabling this repository in the Zenodo GitHub integration, publishing this release will generate a permanent Zenodo DOI for citation.
 
 ## Paper Workflow
 
